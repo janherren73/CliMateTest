@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <p @click="newMailInList()">Your Code here...</p>
+    <h1>Libary</h1>
   </div>
 </template>
 <script src="./Home.js"></script>
