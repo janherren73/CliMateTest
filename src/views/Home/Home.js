@@ -7,4 +7,5 @@ export default {
   },
   methods: {
     // your methods here
+  },
 };
