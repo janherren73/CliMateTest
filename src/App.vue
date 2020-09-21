@@ -1,8 +1,26 @@
 <template>
   <div id="app">
-    <router-view />
+    <Home/>
+    <router-view/>
   </div>
 </template>
+
+
+<script>
+import Home from "@/views/Home/Home";
+import Card from "./components/Card/Card";
+
+
+export default {
+  components: {Home, Card},
+  data () {
+    return {
+      message: 'Hey'
+    }
+  }
+}
+
+</script>
 
 <style>
 @import url('./assets/general.scss');

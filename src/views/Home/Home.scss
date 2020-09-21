@@ -1,1 +1,23 @@
 // your style here
+.buecher,
+.buecher1,
+.buecher2,
+.buecher3{
+  background-color: red;
+  width: 20vw;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  margin: 1px;
+
+}
+#buecherTitel{
+  font-size: 2rem;
+  background-color: purple;
+  border-radius: 20px;
+  margin: 1px;
+}
+
+.column{
+  display: flex;
+  justify-content: space-between;
+}
