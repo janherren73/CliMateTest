@@ -1,29 +1,29 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Card from '../components/Card/Card.vue';
-import Home from '../views/Home/Home.vue';
+import Details from '../components/Details/Details.vue';
+import Home from '../components/Home/Home.vue';
 import NewBook from '../components/New Book/NewBoook';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/home',
-    name: 'Home',
+    path: '/',
+    name: 'home',
     component: Home,
   },
+
   {
-    path: '/Card',
-    name: 'Card',
-    component: Card,
+    path: '/newbook',
+    name: 'Newbook',
+    component: NewBook,
   },
 
   {
-    path: '/',
-    name: 'Newbook',
-    component: NewBook,
-  }
-
+    path: '/bookDetails/:id',
+    name: 'Details',
+    component: Details,
+  },
 ];
 
 const router = new VueRouter({
