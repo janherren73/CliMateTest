@@ -10,7 +10,7 @@
       <ul>
         <thead>
           <tr>
-            <th> Buchname </th>
+            <th> Buchnam </th>
             <th> BuchAutor </th>
             <th> Beschreibung </th>
             <th> Rating </th>
@@ -43,8 +43,10 @@
 
     </section>
 
+    <div class="btn">
+      <router-link tag="button" to="/newbook"> New Book </router-link>
+    </div>
 
-    <router-link tag="button" to="/newbook"> New Book </router-link>
 
 
   </div>

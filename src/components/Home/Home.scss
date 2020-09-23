@@ -17,11 +17,16 @@
     display: flex;
     justify-content: center;
   }
-
-  button{
-    width: 10vw;
+  .btn{
     display: flex;
     justify-content: center;
+    button{
+      width: 10vw;
+      display: flex;
+      justify-content: center;
 
+    }
   }
+
+
 }
