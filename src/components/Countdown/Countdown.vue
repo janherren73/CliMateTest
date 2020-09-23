@@ -47,10 +47,10 @@
             _days() {
                 return this._hours * 24
             },
-            end() {
+            _end() {
                 return new Date(
                     this.year,
-                    this.months,
+                    this.month,
                     this.date,
                     this.hour,
                     this.minute,
