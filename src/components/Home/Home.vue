@@ -5,9 +5,6 @@
         Vue JS Crud App
       </h1>
     </section>
-    <section class="newBook">
-
-    </section>
     <section class="bookTable">
       <div>
       <ul>
@@ -27,7 +24,7 @@
             <td> {{ book.rating }}</td>
             <td> <button @click="fireBaseDelete(book.id)">Delete</button></td>
             <td> <button @click="setEdit(book.id)">Edit</button></td>
-            <td><router-link tag="button" :to="{name: 'detail', params:{id: book.id}}">Details</router-link></td>
+            <td><router-link tag="button" :to="{name: 'Details', params:{id: book.id}}">Details</router-link></td>
           </tr>
 
           <tr v-else >
@@ -36,7 +33,7 @@
             <td> <input type="text" v-model="book.beschreibung"></td>
             <td> <input type="text" v-model="book.rating"></td>
             <td> <button @click="setCancel(book.id)">Cancel</button></td>
-            <td> <button @click="checkForm(this.bookFire),
+            <td> <button @click="checkForm(book),
             setUpdate(book.id, book.buchname, book.autor, book.beschreibung, book.rating, book.edit)">Save</button></td>
           </tr>
         </tbody>
@@ -47,12 +44,12 @@
     </section>
 
 
-    <button><router-link tag="button" :to="{name: 'Newbook'}"> New Book </router-link></button>
+    <router-link tag="button" to="/newbook"> New Book </router-link>
 
 
   </div>
 </template>
 <script src="./Home.js"></script>
-<style scoped>
+<style lang="scss" src="./Home.scss"scoped>
 
 </style>

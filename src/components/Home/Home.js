@@ -6,14 +6,6 @@ export default {
   data() {
     return {
         bookFire: [],
-        newBook: {
-            edit: false,
-            id: '',
-            buchname: '',
-            autor: '',
-            beschreibung: '',
-            rating: 0,
-        },
     };
   },
 
