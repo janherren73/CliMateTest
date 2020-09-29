@@ -1,18 +1,23 @@
-import Countdown from '../../components/Countdown/Countdown.vue'
+import newbook from '../../components/NewBook/Newbook.vue'
 export default {
   name: 'Home',
   components: {
-    Countdown
+    newbook
   },
   data() {
     return {
-      displayDays: 0,
-      displayHours: 0,
-      displayMinutes: 0, 
-      displaySeconds: 0,
+      snapData: [],
     };
+  },
+  created() {
+    this.fireBaseGet();
   },
   methods: {
     // your methods here
+    fireBaseGet() {
+      this.$firestore.collection("DionetaBuecher").get().then((snapData) => {
+        let lol = snapData.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+      });
+    },
   },
 };

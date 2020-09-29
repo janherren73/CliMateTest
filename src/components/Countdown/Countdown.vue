@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="text-3xl flex justify-center content-center flex-col mx-auto text-center"></section>
-    <section class="flex text-6xl justify-center content-center">
+    <section class="flex text-6xl justify-center content-center container">
       <div class="days mr-2 relative">
         {{displayDays}}
         <div class="label text-sm absolute bottom-0">days</div>
@@ -68,8 +68,9 @@
             showRemaining(){
                 const timer = setInterval(() => {
                     const now = new Date();
-                    // const end = new Date(2020, 8,22,10,30,10,10)
-                    const distance = this.end.getTime() - now.getTime();
+                    const lol = new Date()
+                    const end = new Date(2020, 9,2,0,0,0,0)
+                    const distance = end.getTime() - now.getTime();
 
                     if(distance < 0) {
                         clearInterval(timer);
@@ -91,4 +92,10 @@
 </script>
 
 <style lang="scss" scoped>
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 </style>
