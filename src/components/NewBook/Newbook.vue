@@ -1,32 +1,34 @@
 <template>
     <div class="container">
-        <div>
             <h1 class="title">
                 Library CRUD App with Vue.js 
             </h1>
             <span class="bookForm">
-                <input type="text" v-module="book.buchname" placeholder="Name des Buches">
+                <label>Buchname: </label>
+                <input type="text" class="form-control" v-model="newbook.buchname" placeholder="Name des Buches"/>
             </span>
             <span class="bookForm">
-                <input type="text" v-module="book.autor" placeholder="Autor des Buches">
+                <label>Autor: </label>
+                <input type="text" class="form-control" v-model="newbook.autor" placeholder="Autor des Buches"/>
             </span>
             <span class="bookForm">
-                <input type="text" v-module="book.beschreibung" placeholder="Beschreibung">
+                <label>Beschreibung: </label>
+                <input type="text" class="form-control" v-model="newbook.beschreibung" placeholder="Beschreibung"/>
             </span>
             <span class="bookForm">
-                <input type="text" v-module="book.rating" placeholder="Rating des Buches">
+                <label>Rating: </label>
+                <input type="nummber" class="form-control" v-model="newbook.rating" placeholder="Rating des Buches"/>
             </span>
             <span>
-                <span class="button" v-if="checkForm(book) === true">
+                <div class="button" v-if="this.checkForm(this.newbook) === true">
                     <button @click="fireBasePost()">Submit Book</button>
-                </span>
-                <span class="errorMessage" v-else>
-                    <h1>Flülle alle Felder aus.</h1>
-                </span>
-                <router-link tag="button" :to="{name: 'home'}">Zurück</router-link>
+                </div>
+                <div v-else class="errorMessage">
+                    <h1>Fülle alle Felder aus.</h1>
+                </div>
             </span>
-        </div>
-        <table>
+    </div>
+        <!-- <table>
             <thead>
                 <tr>
                     <th>Buchname</th>
@@ -45,28 +47,29 @@
 
             </tbody>
 
-        </table> 
-    </div>
+        </table>  -->
 </template>
 <script>
 
+import newbook from "../../views/Home/Home.vue";
+
 export default {
 name: 'Newbook',
-data(){
+data() {
     return {
-        book: {
-            edit: false,
-            id: '',
-            buchname: '',
-            autor: '',
-            beschreibung: '',
-            rating: 0,
-        }
+      newbook: {
+        edit: false, 
+        id: '',
+        buchname: '',
+        autor: '',
+        beschreibung: '',
+        rating: 0,
+      },
     }
+},
+    computed: {
 
-  },
-
-
+    },
     methods: {
 
         //Posting new Book to FireBase
@@ -76,10 +79,10 @@ data(){
             .doc()
             .set({
                 //data that should go into the collection
-                buchname: this.book.buchname,
-                autor: this.book.autor,
-                beschreibung: this.book.beschreibung,
-                rating: this.book.rating,
+                buchname: this.newbook.buchname,
+                autor: this.newbook.autor,
+                beschreibung: this.newbook.beschreibung,
+                rating: this.newbook.rating,
                 edit: false,
             })
             .then(() => {
@@ -107,17 +110,24 @@ data(){
 <style scoped>
 .container {
   display: flex;
-  background-color: lavender;
+  background-image: url(https://i.pinimg.com/736x/18/39/ce/1839cefbaa51cd3eb5c151dbdda1cfab.jpg);
+  background-color: rgb(35,99,71,0.3);
   max-width: 900px;
   margin: auto;
   height: 100vh;
   justify-content: center;
-}
+  flex-direction: column;
+  }
   .title {
-      color: #908;
+      color:white;
+      background-color: rgba(99, 87, 35, 0.8);
+      font-style:oblique;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   .bookForm{
     padding: 5px;
+    background-color: rgb(99,87,35,0.6);
+    font-style: bold;
   }
   button {
     margin: 0.5rem;
