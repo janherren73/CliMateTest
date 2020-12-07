@@ -1,14 +1,28 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home/Home.vue';
+import Details from '../components/Details/Details.vue';
+import Home from '../components/Home/Home.vue';
+import NewBook from '../components/New Book/NewBoook';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home,
+  },
+
+  {
+    path: '/newbook',
+    name: 'Newbook',
+    component: NewBook,
+  },
+
+  {
+    path: '/bookDetails/:id',
+    name: 'Details',
+    component: Details,
   },
 ];
 
